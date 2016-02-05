@@ -3,3 +3,10 @@
 
 /Q/ How is the staging area different from the working directory and the repository? Wht value do you think it offers?
 /A/ You prepare files you want to commit into the staging area. This way you can add files that belong together into a single commit. And leave files that are not connected to another commit. The working directory contains all files in your directory and the repository contains all the previous commits.
+
+/Note/ 
+git diff - compares chnages between staging area and working directory
+git diff --staged - compared changes between most recent commit and staging area. If no updated files have been added to the staging area, this command wont produce output.
+
+/Q/ How can you use the staging area to make sure you have one commit per logical change?
+/A/ only the files that are in the staging area will be committed, so you can add all logical files into the staging area and make the commit.
