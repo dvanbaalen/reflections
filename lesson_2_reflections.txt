@@ -1,0 +1,5 @@
+/Q/ What happens when you initialize a repository? Why do you need to do it?
+/A/ When you initialize a repository an invisible .git folder is made that contains your commits made. You need to do this in case you want to keep track of you files and the history of the files.
+
+/Q/ How is the staging area different from the working directory and the repository? Wht value do you think it offers?
+/A/ You prepare files you want to commit into the staging area. This way you can add files that belong together into a single commit. And leave files that are not connected to another commit. The working directory contains all files in your directory and the repository contains all the previous commits.
