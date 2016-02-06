@@ -9,4 +9,4 @@ git diff - compares chnages between staging area and working directory
 git diff --staged - compared changes between most recent commit and staging area. If no updated files have been added to the staging area, this command wont produce output.
 
 /Q/ How can you use the staging area to make sure you have one commit per logical change?
-/A/ only the files that are in the staging area will be committed, so you can add all logical files into the staging area and make the commit.
+/A/ only the files that are in the staging area will be committed, so you can add all logical files into the staging area and make the commit containing only those files.
