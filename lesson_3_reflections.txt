@@ -1,3 +1,7 @@
 When would you want to use a remote repository rather than keeping all your work local?
   
     When working on a project with multiple people it will be convenient to host the project on github. Also when you use multiple         computers to work on your code it may be convenient to host the project online.
+
+Why might you want to always pull changes manually rather than having Git automatically stay up-to-date with your remote repository?
+
+	You may be working on the same thing that has been updated on the remote repository. You don't want this remote changed to becomes synced automatically as this could reallly mess up your local repository.
