@@ -1,51 +1,54 @@
-/Note/ Comparing files in git bash
-in command line programs like git bash you can easiliy compare two files to see how it changed.
-This can be extremely convenient in version control as you can see how the new version has changed 
+/Note/ Using diff to find bugs
+in command line programs like git bash you can easiliy compare two files to see how it changed. This can be extremely convenient in version control as you can see how the new version has changed 
 compared to the old version.
 $ diff -u file_old.txt file_new.txt
 compares file_old to file_new and lists what has been added (+) and what has been deleted (-)
 
-/Q/ How could having easy access to the entire history of a file make you a more efficient programmer in the long term?
-/A/ When you have all older version of your file available, you can open them and see how you have improved
-your code or what went wrong when updating your code. This way you can easily see errors 
+/Q/ 
+How could having easy access to the entire history of a file make you a more efficient programmer in the long term?
+/A/ 
+When you have all older version of your file available, you can open them and see how you have improved your code or what went wrong when updating your code. This way you can easily find errors and correct them.
 
-/Q/ using git with commit
-/A/ With github version control you can commit a change. For each commit a version of the file should be saved. 
-Use one commit per logical change to limit the amount of version files. Each commit should have a single
+/Note/
+With github version control you can commit a change. For each commit a version of the file should be saved. Use one commit per logical change to limit the amount of version files. Each commit should have a single
 clear and logical purpose and you should never do too much work without commiting.
 
-/Q/ What do you think are the pros and cons of manually choosing when to create a commit, like you do in Git, vs having versions automatically saved, like Google Docs does?
-/A/ when automatically saving files, you may end up saving a file in the middle of a change. This may
-render automatic saves useless. WHen manually saving, you can save a version right after you have
-completed a commit. This way you have clear version where you know what you tried to accomplish.
+/Q/ 
+What do you think are the pros and cons of manually choosing when to create a commit, like you do in Git, vs having versions automatically saved, like Google Docs does?
+/A/ 
+When automatically saving files, you may end up saving a file in the middle of a change. This may render automatic saves useless. When manually saving, you can save a version right after you have completed a commit. This way you have clear version where you know what you tried to accomplish.
 
-/Q/ Why do you think some version control systems, like Git, allow saving multiple files in one commit, while others, like Google Docs, treat each file separately?
-/A/ When a commit requires multiple files to change, typically in different files of the same app. It makes
-sense to keep track of all files together such that you know which version of which files belong together. 
-In google docs where a document doesnt effect another document it is sufficient to only track the 
-changes per file seperately.
+/Q/ 
+Why do you think some version control systems, like Git, allow saving multiple files in one commit, while others, like Google Docs, treat each file separately?
+/A/ 
+When a commit requires multiple files to change, typically in different files of the same app, it makes sense to keep track of these files together. 
+In google docs where a document doesnt affect another document it is sufficient to only track the changes per file seperately.
 
-/Q/ How can you use the commands git log and git diff to view the history of files?
-/A/ using git log you see all saved commits using git. With git diff you can see the difference between two commits by entering the ids. eg. git diff id1 (old) id2 (new). with git log -2 you see the last two commits only.
+/Q/ 
+How can you use the commands git log and git diff to view the history of files?
+/A/ 
+By using git log you see all saved commits using git. With git diff you can see the difference between two commits by entering the ids. eg. git diff id1 (old) id2 (new). with git log -2 you see only the last two commits.
 
-/Q/ How might using version control make you more confident to make changes that could break something?
-/A/ when you have a working version you should have a commit of that version. You can make rigorous changes
-without having to worry about braking the file as you can always checkout older versions (restore) to
-see in which version the bug was introduced. once you have found the version that introduced the bug, 
-you can use git diff to find the differences between two commits.
+/Q/ 
+How might using version control make you more confident to make changes that could break something?
+/A/ 
+When you have a working version you should have a commit of that version. You can make rigorous changes without having to worry about braking the file as you can always checkout older versions (restore) to
+see in which version a potential bug was introduced. once you have found the version that introduced the bug, you can use git diff to find the differences between the broken and working commits and fix the bug.
 
-/Q/ Now that you have your workspace set up, what do you want to try using Git for?
-/A/ I am going to write my first android app to cheat with hangman. Since I am learning java / android programming I am going to make mistakes. using git may help me grow and develop good programming practices
+/Q/ 
+Now that you have your workspace set up, what do you want to try using Git for?
+/A/ 
+I am going to write my first android app to cheat with hangman. Since I am learning java / android programming I am going to make mistakes. using git may help me grow and develop good programming practices.
 
 
 /Note/
 Git commands:
-/git log - show all commits in the current repository, starting with the most recent command
-/git clone - Make a copy of an entire Git repository, including the history, onto your own computer, cloning only works on git repositories.Note that with copying (copy command = scp) the files will only copy the current commit.
-/git checkout - Temporarily reset all files in a repository to their state at the time of specific commit
-/git diff id1 id2- compare two commits, printing each line that is present in one commit but not the other. id1 = original, id2 = new.
-/git add <file> - to be able to save a commit
-/git commit -a - commit a change without having to use the gid add command
-/git commit -m 'message' - commit a change with a messaga description of the changes intended with the commit.
+/git log -5/ show first 5 commits (without arguments this command will show all commits) in the current repository, starting with the most recent commit
+/git clone/ Make a copy of an entire Git repository, including the history, onto your own computer, cloning only works on git repositories.Note that with copying (copy command = scp) the files will only copy the current commit.
+/git checkout id/ Temporarily reset all files in a repository to their state at the time of a specific commit
+/git diff id1 id2/ compare two commits, printing each line that is present in one commit but not the other. id1 = original, id2 = new.
+/git add <file>/ add a file to the staging area, ready to commit
+/git commit -a/ commit a change without having to use the gid add command
+/git commit -m 'message'/ commit a change with a messaga description of the changes intended with the commit. Note that when you have a default text editor linked to git bash, running the git commit command will automatically pop-up the text editor where you can enter a commit message.
 
 
