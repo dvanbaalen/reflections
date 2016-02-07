@@ -1,12 +1,45 @@
-/Q/ What happens when you initialize a repository? Why do you need to do it?
-/A/ When you initialize a repository an invisible .git folder is made that contains your commits made. You need to do this in case you want to keep track of you files and the history of the files.
+/Q/ 
+What happens when you initialize a repository? Why do you need to do it?
+/A/ 
+When you initialize a repository (with "git init" in the folder where you want a git repository) an invisible .git folder is made that contains your commits made. You need to do this in case you want to keep track of you files and the history of the files.
 
-/Q/ How is the staging area different from the working directory and the repository? Wht value do you think it offers?
-/A/ You prepare files you want to commit into the staging area. This way you can add files that belong together into a single commit. And leave files that are not connected to another commit. The working directory contains all files in your directory and the repository contains all the previous commits.
+/Q/ 
+How is the staging area different from the working directory and the repository? What value do you think it offers?
+/A/ 
+You prepare files you want to commit into the staging area. This way you can add files that belong together into a single commit. And leave files that are not connected to another commit. The working directory contains all files in your directory and the repository contains all the previous commits.
 
 /Note/ 
-git diff - compares chnages between staging area and working directory
-git diff --staged - compared changes between most recent commit and staging area. If no updated files have been added to the staging area, this command wont produce output.
+/git diff/ compares changes between staging area and working directory
+/git diff --staged/ compares changes between most recent commit and staging area. If no updated files have been added to the staging area, this command wont produce output.
 
-/Q/ How can you use the staging area to make sure you have one commit per logical change?
-/A/ only the files that are in the staging area will be committed, so you can add all logical files into the staging area and make the commit containing only those files.
+/Q/ 
+How can you use the staging area to make sure you have one commit per logical change?
+/A/ 
+Only the files that are in the staging area will be committed, so you can add all logical files into the staging area and make the commit containing only those files.
+
+/Q/ 
+What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+/A/ 
+You can use branches to make experimental changes to your project without affecting the master branch. When you find a bug in your master bug you can fix that. When your experimental feature works out you can merge that branch with the master branch (that may have also updated since you started the experimental branch).
+
+/Q/ 
+How do the diagrams help you visualize the branch structure?
+/A/ 
+With a diagram you can show which commits are made for which branches. ie which commits belong to which parent commit. git log --graph --oneline branch_name_1 branch_name_2
+
+/Q/ 
+What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+/A/ 
+By merging two branches together, the deletions of either branch and the insertions of either branch are combined into a new commit in the new branch. "git merge coins master" merges the coins branch into the master branch. the coins branch can now be deleted as the commits of the coins branch are now accessible from the master branch. The branch structure can be visilised as above, this gives a clear overview of which commits belong to which branch and whether or not they are merged. the merge command automatically commits the merge and adds an automatic message.
+
+/Notes/
+/git log --graph --oneline branch_name_1 branch_name_2/
+/git merge coins master/ merges the coins branch into the master branch
+/git merge master coins/ updates the coins branch to include the changes made in the master branch.
+/git branch/ shows the branches that exist
+/git branch new_branch_name/ creates a new branch
+
+/Q/ 
+What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+/A/ 
+Git's automatic merging options allows to quickly combine changes made in different branches. A downside of the automatic merge is that git cannot merge files where changes have been made to the same general area in the code (even if which version to use is obvious for you). Git then pops up a conflict message saying that you need to resolve the conflict manually. after updating the file you are still merging, meaning that you still need to add and commit your merge.
